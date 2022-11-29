@@ -13,22 +13,35 @@ $(timeBlocks).each(function(i, timeBlock) {
 if (currentTime > hour){
     $(this).children(".description").addClass("past");
 
-} else if (currentTime == hour) {
+    } else if (currentTime == hour) {
 
     $(this).children(".description").removeClass("past");
     $(this).children(".description").addClass("present");
 
-} else {
+    } else {
 
     $(this).children(".description").removeClass("past");
     $(this).children(".description").removeClass("present");
     $(this).children(".description").addClass("future");
     
-}
+    }
 
-});
+    });
 
 
 }, 1000);
+
+//Click event to save text from individual time block to local storage
+$(".saveBtn").each(function (i, btn) {
+    $(btn).on("click",function (){
+
+        var value = $(this).siblings(".description").val();
+        var key = $(this).parent().children(".description").attr("id");
+        localStorage.setItem(key,value)
+
+    })
+    
+});
+
 
 
