@@ -4,11 +4,8 @@ var currentTime = moment().hour()
 
 setInterval(function(){
     timeDisplay.textContent = moment().format("dddd:  h:mm:ss a");
-}, 1000);
 
 //Change color display of row based on time of day
-
-
 $(timeBlocks).each(function(i, timeBlock) {
     var hour = $(timeBlock).children(".description").attr("id")
     console.log(hour)
@@ -30,4 +27,8 @@ if (currentTime > hour){
 }
 
 });
+
+
+}, 1000);
+
 
