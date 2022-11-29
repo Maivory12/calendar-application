@@ -43,7 +43,7 @@ $(".saveBtn").each(function (i, btn) {
     
 });
 
-// //The values in local storage from each indivudual time block displayed
+//The values in local storage from each indivudual time block displayed
 $(".saveBtn").each(function (i, btn) {
     var key = $(btn).parent().children(".description").attr("id");
     var value = localStorage.getItem(key);
