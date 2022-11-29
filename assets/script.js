@@ -35,13 +35,22 @@ if (currentTime > hour){
 $(".saveBtn").each(function (i, btn) {
     $(btn).on("click",function (){
 
-        var value = $(this).siblings(".description").val();
+        var task = $(this).siblings(".description").val();
         var key = $(this).parent().children(".description").attr("id");
-        localStorage.setItem(key,value)
+        localStorage.setItem(key,task)
 
     })
     
 });
+
+// //The values in local storage from each indivudual time block displayed
+$(".saveBtn").each(function (i, btn) {
+    var key = $(btn).parent().children(".description").attr("id");
+    var value = localStorage.getItem(key);
+    var textArea = $(this).siblings(".description");
+    textArea.val(value);
+});
+
 
 
 
